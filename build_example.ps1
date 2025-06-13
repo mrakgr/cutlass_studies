@@ -16,7 +16,6 @@ nvcc `
     -arch=native `
     -D=NDEBUG `
     -g -G `
-    -dopt=on `
     -restrict `
     -expt-relaxed-constexpr `
     -D__CUDA_NO_HALF_CONVERSIONS__ `
