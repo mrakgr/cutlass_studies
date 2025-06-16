@@ -25,6 +25,5 @@ nvcc `
 
 if ($?) { # Runs the file if the compilation was successful.
     Write-Host "Running: $output_file"
-    $env:CUDA_LAUNCH_BLOCKING=1
     . $output_file
 }

@@ -8,13 +8,7 @@
             "name": "CUDA C++: Launch",
             "type": "cuda-gdb",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/gemm_bias_relu",
-            "environment": [
-                {
-                    "name": "CUDA_LAUNCH_BLOCKING",
-                    "value": "1"
-                }
-            ]
+            "program": "${workspaceFolder}/bin/gemm_bias_relu"
         },
         {
             "name": "PowerShell: Launch Current File",
