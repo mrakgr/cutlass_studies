@@ -34,5 +34,5 @@ nvcc `
 
 if ($?) { # Runs the file if the compilation was successful.
     Write-Host "Done Compiling: $output_file"
-    Write-Host "Running: $output_file" && . $output_file
+    # Write-Host "Running: $output_file" && . $output_file
 }

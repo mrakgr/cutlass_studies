@@ -8,7 +8,7 @@
             "name": "CUDA C++: Launch",
             "type": "cuda-gdb",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/gemm_bias_relu"
+            "program": "${workspaceFolder}/bin/bin/ampere_gather_scatter_conv"
         },
         {
             "name": "PowerShell: Launch Current File",
