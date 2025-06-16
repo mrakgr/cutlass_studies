@@ -14,7 +14,7 @@ nvcc `
     -isystem /usr/local/cuda/include `
     -isystem /usr/local/cuda/include/cccl `
     -DCUTLASS_VERSIONS_GENERATED `
-    -O3 `
+    -g -G `
     -DNDEBUG `
     -std=c++17 `
     --generate-code=arch=compute_120a,code=[sm_120a] `
@@ -34,6 +34,6 @@ nvcc `
     $example_file
 
 if ($?) { # Runs the file if the compilation was successful.
-    Write-Host "Running: $output_file"
-    . $output_file
+    Write-Host "Done Compiling: $output_file"
+    Write-Host "Running: $output_file" && . $output_file
 }
