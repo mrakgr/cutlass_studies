@@ -8,7 +8,13 @@
             "name": "CUDA C++: Launch",
             "type": "cuda-gdb",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/ampere_gather_scatter_conv"
+            "program": "${workspaceFolder}/bin/ampere_gather_scatter_conv",
+            "environment": [
+                {
+                    "name": "CUDA_LAUNCH_BLOCKING",
+                    "value": "1"
+                }
+            ]
         },
         {
             "name": "PowerShell: Launch Current File",
