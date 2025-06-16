@@ -13,8 +13,8 @@ nvcc `
     -I"cutlass/tools/util/include" `
     -isystem /usr/local/cuda/include `
     -isystem /usr/local/cuda/include/cccl `
-    -g -lineinfo `
-    -arch=native `
+    -g -G `
+    -arch=sm_120a `
     -std=c++17 `
     --expt-relaxed-constexpr `
     -DCUTLASS_VERSIONS_GENERATED `
