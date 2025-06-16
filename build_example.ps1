@@ -1,5 +1,5 @@
-$CUTLASS_DIR = "cutlass" # Cutlass should be cloned in the current directory
-$example_file = "$CUTLASS_DIR/examples/12_gemm_bias_relu/gemm_bias_relu.cu"
+# $example_file = "cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu"
+$example_file = "cutlass/examples/59_ampere_gather_scatter_conv/ampere_gather_scatter_conv.cu"
 $output_file = "bin/$($example_file | Split-Path -LeafBase)"
 $output_dir = $output_file | Split-Path -Parent
 Write-Host "Compiling '$example_file' into: $output_file"
@@ -7,10 +7,10 @@ if (-not (Test-Path $output_dir)) {
     New-Item $output_dir -ItemType Directory
 }
 nvcc `
-    -I"$CUTLASS_DIR/include" `
-    -I"$CUTLASS_DIR/examples/common" `
-    -I"$CUTLASS_DIR/build/include" `
-    -I"$CUTLASS_DIR/tools/util/include" `
+    -I"cutlass/include" `
+    -I"cutlass/examples/common" `
+    -I"cutlass/build/include" `
+    -I"cutlass/tools/util/include" `
     -isystem /usr/local/cuda/include `
     -isystem /usr/local/cuda/include/cccl `
     -arch=native `

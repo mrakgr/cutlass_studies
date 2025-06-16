@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/cutlass/include",
+                "${workspaceFolder}/cutlass/examples/common",
+                "${workspaceFolder}/cutlass/tools/util/include",
+                "/usr/local/cuda/include"
+            ],
+            "defines": [
+                "__NVCC__",
+                "__CUDA_ARCH__=1200"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "gnu++20"
+        }
+    ],
+    "version": 4
+}
