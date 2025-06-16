@@ -1,5 +1,6 @@
 # $example_file = "cutlass/examples/12_gemm_bias_relu/gemm_bias_relu.cu"
-$example_file = "cutlass/examples/59_ampere_gather_scatter_conv/ampere_gather_scatter_conv.cu"
+# $example_file = "cutlass/examples/59_ampere_gather_scatter_conv/ampere_gather_scatter_conv.cu"
+$example_file = "cutlass/examples/79_blackwell_geforce_gemm/79c_blackwell_geforce_mixed_mxfp8_mxfp6_bf16_gemm.cu"
 $output_file = "bin/$($example_file | Split-Path -LeafBase)"
 $output_dir = $output_file | Split-Path -Parent
 Write-Host "Compiling '$example_file' into: $output_file"
@@ -13,8 +14,8 @@ nvcc `
     -I"cutlass/tools/util/include" `
     -isystem /usr/local/cuda/include `
     -isystem /usr/local/cuda/include/cccl `
-    -g -lineinfo `
-    -arch=native `
+    -g -G `
+    -arch=sm_120a `
     -std=c++17 `
     --expt-relaxed-constexpr `
     -DCUTLASS_VERSIONS_GENERATED `
@@ -34,5 +35,5 @@ nvcc `
 
 if ($?) { # Runs the file if the compilation was successful.
     Write-Host "Done Compiling: $output_file"
-    # Write-Host "Running: $output_file" && . $output_file
+    Write-Host "Running: $output_file" && . $output_file
 }
